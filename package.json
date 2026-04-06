@@ -1,0 +1,12 @@
+{
+  "name": "priyavarshini-portfolio",
+  "version": "1.0.0",
+  "description": "Professional MERN Portfolio for Priyavarshini V",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && node index.js",
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "dev": "npm run client"
+  }
+}

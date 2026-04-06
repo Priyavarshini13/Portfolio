@@ -1,0 +1,4 @@
+/* App-level resets — design system lives in index.css */
+#root {
+  isolation: isolate;
+}

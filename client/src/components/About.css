@@ -1,0 +1,167 @@
+/* ── Fade-in animation ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── About Layout ── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Bio Card ── */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.bio-avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  opacity: 0.3;
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.1; }
+}
+
+.bio-role {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-code);
+  margin-top: -8px;
+}
+
+.bio-description {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.bio-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.meta-icon { font-size: 1rem; }
+
+.meta-item a {
+  color: var(--accent-violet-light);
+  transition: var(--transition);
+  word-break: break-all;
+}
+
+.meta-item a:hover { color: var(--accent-cyan); }
+
+/* ── Education ── */
+.about-edu { display: flex; flex-direction: column; gap: 20px; }
+
+.edu-heading {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  padding-left: 4px;
+}
+
+.edu-timeline { display: flex; flex-direction: column; gap: 16px; }
+
+.edu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 24px;
+  cursor: default;
+}
+
+.edu-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.edu-details { flex: 1; }
+
+.edu-details h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.edu-institution {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.edu-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.edu-score {
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-emerald);
+}
+
+.edu-year {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-bio { text-align: left; align-items: flex-start; }
+}

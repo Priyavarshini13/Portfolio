@@ -1,0 +1,108 @@
+.internships-section { background: var(--bg-secondary); }
+
+.internships-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.internships-list::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  border-radius: 2px;
+}
+
+.intern-card {
+  position: relative;
+  padding-left: 60px;
+}
+
+.intern-timeline-dot {
+  position: absolute;
+  left: 20px;
+  top: 32px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--intern-color, var(--accent-violet));
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--intern-color, var(--accent-violet)) 50%, transparent);
+  z-index: 1;
+}
+
+.intern-content { display: flex; flex-direction: column; gap: 12px; }
+
+.intern-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.intern-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.intern-company {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-code);
+}
+
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-violet-light);
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.cert-link:hover {
+  background: rgba(124, 58, 237, 0.25);
+  border-color: var(--accent-violet);
+}
+
+.intern-desc {
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.intern-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intern-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 768px) {
+  .internships-list::before { left: 20px; }
+  .intern-card { padding-left: 48px; }
+  .intern-timeline-dot { left: 12px; }
+}
