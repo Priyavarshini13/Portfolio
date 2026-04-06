@@ -30,7 +30,6 @@ export default function Navbar() {
     >
       <div className="navbar-content">
         <a href="#" className="navbar-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          {'<PV />'}
         </a>
         <ul className={`navbar-links ${mobileOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
